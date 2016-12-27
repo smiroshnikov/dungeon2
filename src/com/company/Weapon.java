@@ -46,13 +46,35 @@ public class Weapon {
     }
 
     public enum BaseWeapon {
-        CLAWS("claws", Type.NATURAL, 1, 6),
-        TEETH("teeth", Type.NATURAL, 4, 8),
-        FIREBREATH("Fire Breath", Type.NATURAL, 8, 16),
-        TWO_HANDED_AXE("2H Axe", Type.ARMS, 2, 12),
+        CLAWS("Claws", Type.NATURAL, 4, 6),
+        TEETH("Teeth", Type.NATURAL, 2, 8),
+        TENTACLES("Tentacles", Type.NATURAL, 8, 16),
+
+
+        FIREBREATH("Fire Breath", Type.SUPERNATURAL, 8, 16),
+        SPIKES("SPIKES", Type.SUPERNATURAL, 1, 3),
+        ACID_SPIT("Acid Spit", Type.SUPERNATURAL, 4, 16),
+
+
+        TWO_HANDED_AXE("2H Axe", Type.ARMS, 2, 14),
+        TWO_HANDED_SWORD("2H Sword", Type.ARMS, 4, 11),
+        TWO_HANDED_MACE("2H Mace", Type.ARMS, 6, 10),
+        HALBERD("Halberd", Type.ARMS, 2, 17),
         LONGSWORD("Long Sword", Type.ARMS, 1, 8),
+        RUSTY_KNIFE("Rusty Knife", Type.SIMPLE, 1, 3),
+        CLUB("Club", Type.SIMPLE, 1, 6),
+
+        STAFF("Fire Staff", Type.CASTER, 1, 6),
+        TOTEM("Ice Totem", Type.CASTER, 1, 6),
+        FIREBALL("Fire ball", Type.CASTER, 6, 36),
+        FIRESTORM("Fire storm", Type.CASTER, 10, 50),
+        FROSTBLADE("Frost blade", Type.CASTER, 1, 6),
+
+
         WHIP("Barbed Whip", Type.EXOTIC, 4, 5),
-        RUSTY_KNIFE("Long Sword", Type.ARMS, 1, 8);
+        ESTOC("Estoc", Type.EXOTIC, 7, 11),
+        TRIDENT("Trident", Type.EXOTIC, 4, 5);
+
 
         private final String weaponName;
         private final Type weaponType;
@@ -69,8 +91,12 @@ public class Weapon {
 
         public enum Type {
             NATURAL,
+            SUPERNATURAL,
             ARMS,
             EXOTIC,
+            SIMPLE,
+            CASTER
+
         }
 
     }

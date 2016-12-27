@@ -28,7 +28,7 @@ public class Monster {
 
     @Override
     public String toString() {
-        return "[" + race.raceName.toUpperCase() + "]" +
+        return "[" + race.getRaceName().toUpperCase() + "]" +
                 " is armed with " + "*" + monsterEquippedWeapon + "*"
                 ;
     }
@@ -43,11 +43,24 @@ public class Monster {
     }
 
     public enum MonsterRace {
-        GOBLIN("goblinoid", Weapon.BaseWeapon.Type.ARMS),
-        DRAGON("draconid", Weapon.BaseWeapon.Type.NATURAL),
-        ORC("orc", Weapon.BaseWeapon.Type.ARMS),
-        SHAPELESS("shapeless", Weapon.BaseWeapon.Type.NATURAL),
-        ANIMAL("animal", Weapon.BaseWeapon.Type.NATURAL);
+        GOBLINOID("Goblin", Weapon.BaseWeapon.Type.SIMPLE),
+        GOBLINWARRIOR("Goblin Warrior", Weapon.BaseWeapon.Type.ARMS),
+        GOBLINSHAMAN("Goblin Shaman", Weapon.BaseWeapon.Type.CASTER),
+
+        DRACONID_WARRIOR("Draconid warrior", Weapon.BaseWeapon.Type.ARMS),
+        DRAGON_MAGE("Dragon Mage", Weapon.BaseWeapon.Type.CASTER),
+        DRAGON_ARCH_MAGE("Dragon Arch-mage", Weapon.BaseWeapon.Type.CASTER),
+
+        ORC_WARRIOR("Orc warrior", Weapon.BaseWeapon.Type.ARMS),
+        ORC_SHAMAN("Orc Shaman", Weapon.BaseWeapon.Type.CASTER),
+
+        SHAPELESS("Shape shifter", Weapon.BaseWeapon.Type.NATURAL),
+
+        RAT("Rabid Rat", Weapon.BaseWeapon.Type.NATURAL),
+        WARPIG("WarPig Rider", Weapon.BaseWeapon.Type.ARMS),
+
+        ASSASIN("Shadow assasin", Weapon.BaseWeapon.Type.EXOTIC),
+        SHADOW_MAGE("Shadow mage", Weapon.BaseWeapon.Type.CASTER);
 
         private String raceName;
         private Weapon.BaseWeapon.Type baseWeaponType;
