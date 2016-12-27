@@ -28,8 +28,8 @@ public class Monster {
 
     @Override
     public String toString() {
-        return race.raceName +
-                " " + monsterEquippedWeapon
+        return "[" + race.raceName.toUpperCase() + "]" +
+                " is armed with " + "*" + monsterEquippedWeapon + "*"
                 ;
     }
 

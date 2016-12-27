@@ -1,6 +1,7 @@
 package com.company;
 
 public class Main {
+    // TODO collections MUST
 
     public static void main(String[] args) {
 
@@ -18,13 +19,13 @@ public class Main {
 //            i += 1;
 //        } while (i < 3);
 //        */
-        Monster[] monsterList = new Monster[10];
-        for (int i = 0; i < 10; i++) {
+        Monster[] monsterList = new Monster[1000];
+        for (int i = 0; i < 1000; i++) {
             monsterList[i] = Monster.getRandomMonster();
 
         }
         for (Monster monster : monsterList) {
-            System.out.println(monster.toString() + " hits you for " + monster.doDamage());
+            System.out.println(monster.getMonsterName() + " " + monster.toString() + " hits you for " + monster.doDamage());
 
         }
     }
