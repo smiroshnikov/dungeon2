@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Random;
+
 public class Main {
     // TODO collections MUST
 
@@ -23,7 +25,8 @@ public class Main {
 
         Monster[] monsterList = new Monster[100];
         for (int i = 0; i < 100; i++) {
-            monsterList[i] = Monster.getRandomMonster();
+         //   monsterList[i] = Monster.getRandomMonster();
+            monsterList[i] = Monster.getRandomMonster(Monster.MonsterRace.ORC_SHAMAN);
 
         }
         for (Monster monster : monsterList) {

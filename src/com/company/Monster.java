@@ -25,6 +25,15 @@ public class Monster {
         return new Monster(monsterRace, randomWeapon);
     }
 
+    public static Monster getRandomMonster(MonsterRace monsterRace){
+        Weapon randomWeapon = Weapon.getRandomWeapon(monsterRace.baseWeaponType);
+        return new Monster(monsterRace, randomWeapon);
+
+
+
+
+    }
+
 
     @Override
     public String toString() {
@@ -58,6 +67,8 @@ public class Monster {
 
         RAT("Rabid Rat", Weapon.BaseWeapon.Type.NATURAL),
         WARPIG("WarPig Rider", Weapon.BaseWeapon.Type.ARMS),
+
+        WERESHARK("Wereshark ", Weapon.BaseWeapon.Type.NATURAL),
 
         ASSASIN("Shadow assasin", Weapon.BaseWeapon.Type.EXOTIC),
         SHADOW_MAGE("Shadow mage", Weapon.BaseWeapon.Type.CASTER);
