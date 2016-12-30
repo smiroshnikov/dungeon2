@@ -75,6 +75,8 @@ public class Weapon {
 
         WHIP("Barbed Whip", Type.EXOTIC, 4, 5),
         ESTOC("Estoc", Type.EXOTIC, 7, 11),
+        TWO_HANDED_CURVED_SWORD("Two Handed Curved Sword", Type.EXOTIC, 12, 18),
+        FLAMBERGE("Flamberge", Type.EXOTIC, 5, 13),
         TRIDENT("Trident", Type.EXOTIC, 4, 5);
 
 

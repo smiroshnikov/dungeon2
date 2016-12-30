@@ -5,9 +5,10 @@ public class Monster {
     private Weapon monsterEquippedWeapon;
     private String monsterName;
 
-    public Monster(MonsterRace race) {
-        this(race, null);
-    }
+
+//    public Monster(MonsterRace race) {
+//        this(race, null);
+//    }
 
     public Monster(MonsterRace race, Weapon monsterEquippedWeapon) {
         this(race, monsterEquippedWeapon, Randomizer.getRandomString());
@@ -25,12 +26,9 @@ public class Monster {
         return new Monster(monsterRace, randomWeapon);
     }
 
-    public static Monster getRandomMonster(MonsterRace monsterRace){
+    public static Monster getRandomMonsterByRace(MonsterRace monsterRace) {
         Weapon randomWeapon = Weapon.getRandomWeapon(monsterRace.baseWeaponType);
         return new Monster(monsterRace, randomWeapon);
-
-
-
 
     }
 
@@ -38,7 +36,7 @@ public class Monster {
     @Override
     public String toString() {
         return "[" + race.getRaceName().toUpperCase() + "]" +
-                " is armed with " + "*" + monsterEquippedWeapon + "*"
+                " is armed with " + "-" + monsterEquippedWeapon.toString().toUpperCase() + "-"
                 ;
     }
 
