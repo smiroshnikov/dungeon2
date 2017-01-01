@@ -5,17 +5,25 @@ package NEO;
  */
 public class NeoMonster {
     private static int hp;
-    private static String race;
 
-    public NeoMonster(int hp, String race) {
+    public NeoMonster(int hp) {
         this.hp = hp;
-        this.race = race;
 
     }
 
-    public enum MonsterRace {
-        GOBLIN {},
-        ORC {}
+    private enum MonsterRace {
+        GOBLINOID("Goblin");
+
+        private String raceName;
+
+        MonsterRace(String raceName) {
+            this.raceName = raceName;
+        }
+
+        public String getRaceName() {
+            return raceName;
+        }
+
 
     }
 }
