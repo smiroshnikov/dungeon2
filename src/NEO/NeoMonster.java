@@ -2,14 +2,17 @@ package NEO;
 
 public class NeoMonster {
 
+
     private int hp;
     // final private MonsterType.BaseRace race;
     final private MonsterType monsterType;
+    public NeoWeapon monsterWeapon;
 
-    public NeoMonster(MonsterType monsterType, int minHp, int maxHp) {
+    public NeoMonster(MonsterType monsterType, NeoWeapon monsterWeapon, int minHp, int maxHp) {
         this.hp = NeoRandom.rollDice(minHp, maxHp);
 //        this.race = race;
         this.monsterType = monsterType;
+        this.monsterWeapon = monsterWeapon;
     }
 
 
