@@ -85,7 +85,8 @@ public class Weapon {
         private final int baseDamageMin;
         private final int baseDamageMax;
 
-        BaseWeapon(String weaponName, Type weaponType, int baseDamageMin, int baseDamageMax) {
+        BaseWeapon(String weaponName, Type weaponType, int baseDamageMin,
+                   int baseDamageMax) {
             this.weaponName = weaponName;
             this.weaponType = weaponType;
             this.baseDamageMin = baseDamageMin;
