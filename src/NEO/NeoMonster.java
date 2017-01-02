@@ -1,27 +1,29 @@
 package NEO;
 
 public class NeoMonster {
-    private int minHp;
-    private int maxHp;
-    private int hp;
-    final private Monsters.BaseRace race;
 
-    public NeoMonster(Monsters.BaseRace race, int minHp, int maxHp) {
+    private int hp;
+    // final private MonsterType.BaseRace race;
+    final private MonsterType monsterType;
+
+    public NeoMonster(MonsterType monsterType, int minHp, int maxHp) {
         this.hp = NeoRandom.rollDice(minHp, maxHp);
-        this.race = race;
+//        this.race = race;
+        this.monsterType = monsterType;
     }
+
 
     @Override
     public String toString() {
-        return "NeoMonster{" +
-                "hp=" + hp +
-                ", race=" + race +
-                '}';
+        return monsterType.monsterDescription +
+                " has " + hp + " hp" + "\n" + "this monster base race is \n " +
+                monsterType.baseRace;
     }
 
-    public enum Monsters {
+    public enum MonsterType {
         // TODO this whole structure is not used !!!
-        // TODO this is how I want to generate monsters , randomly !
+        // TODO  what OTHER parameters I expect to see down below ? Loot ? Allowed weapon types ?
+        // DCL("Dracolich Slayer", BaseRace.Minotaur, Weapon.AllowedWeaponType.Axes) ?
 
         GW("Goblin Warrior", BaseRace.GOBLINOID, 1, 3),
         GS("Goblin Shaman", BaseRace.GOBLINOID, 1, 5),
@@ -38,7 +40,7 @@ public class NeoMonster {
 
         // TODO this whole structure is not used !!!
 
-        Monsters(String monsterDescription, BaseRace baseRace, int baseDamageMin, int baseDamageMax) {
+        MonsterType(String monsterDescription, BaseRace baseRace, int baseDamageMin, int baseDamageMax) {
             this.monsterDescription = monsterDescription;
             this.baseRace = baseRace;
             this.baseDamageMin = baseDamageMin;
