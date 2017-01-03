@@ -9,7 +9,7 @@ public class Main {
 
         //
         //Monster dracolich = new Monster(Monster.MonsterRace.DRACONID_WARRIOR, Weapon.getRandomWeapon(Weapon.BaseWeapon.Type.NATURAL));
-//        Monster goblinWarrior = new Monster(Monster.MonsterRace.GOBLIN, Weapon.getRandomWeapon(Weapon.BaseWeapon.Type.ARMS));
+//        Monster goblinWarrior = new Monster(Monster.MonsterRace.GOBLIN, Weapon.getRandomWeapon(Weapon.BaseWeapon.Type.MARTIAL));
         // System.out.println(dracolich.toString());
 //        System.out.println(goblinWarrior.toString());
 //

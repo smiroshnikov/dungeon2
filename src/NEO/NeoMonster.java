@@ -21,8 +21,8 @@ public class NeoMonster {
     @Override
     public String toString() {
         return monsterType.monsterDescription +
-                " has " + hp + " hp" + "\n" + "this monster base race is \n " +
-                monsterType.baseRace + "is equipped with " + monsterEquippedWeapon;
+                " has " + hp + " hp" + "\n" + "This monster base race is " +
+                monsterType.baseRace + "\n" + "He is equipped with " + monsterEquippedWeapon;
     }
 
     public enum MonsterType {
