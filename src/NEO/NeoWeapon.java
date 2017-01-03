@@ -4,13 +4,13 @@ public class NeoWeapon {
 
     private int minDamage;
     private int maxDamage;
-    private Weapons weapon;
+    private Weapons equppedWeapon;
 
 
-    public NeoWeapon(int minDamage, int maxDamage, Weapons weapon) {
+    public NeoWeapon(int minDamage, int maxDamage, Weapons equippedWeapon) {
         this.minDamage = minDamage;
         this.maxDamage = maxDamage;
-        this.weapon = weapon;
+        this.equppedWeapon = equippedWeapon;
     }
 
     public int getRollWeaponDamage() {
@@ -19,7 +19,7 @@ public class NeoWeapon {
 
     @Override
     public String toString() {
-        return weapon.weaponName;
+        return equppedWeapon.weaponName;
 
     }
 
