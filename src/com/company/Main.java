@@ -27,7 +27,7 @@ public class Main {
         for (int i = 0; i < 100; i++) {
             if (i < 50) {
                 //   monsterList[i] = Monster.getRandomMonster();
-                monsterList[i] = Monster.getRandomMonsterByRace(Monster.MonsterRace.ASSASIN);
+                monsterList[i] = Monster.getRandomMonsterByRace(Monster.MonsterRace.ASSASSIN);
             } else {
                 monsterList[i] = Monster.getRandomMonster();
             }

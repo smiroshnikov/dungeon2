@@ -4,15 +4,23 @@ public class NeoWeapon {
 
     private int minDamage;
     private int maxDamage;
+    private Weapons weapon;
 
 
-    public NeoWeapon(int minDamage, int maxDamage) {
+    public NeoWeapon(int minDamage, int maxDamage, Weapons weapon) {
         this.minDamage = minDamage;
         this.maxDamage = maxDamage;
+        this.weapon = weapon;
     }
 
     public int getRollWeaponDamage() {
         return NeoRandom.rollDice(minDamage, maxDamage);
+    }
+
+    @Override
+    public String toString() {
+        return weapon.weaponName;
+
     }
 
     public enum Weapons {
@@ -25,14 +33,15 @@ public class NeoWeapon {
         private final int baseDamageMin;
         private final int baseDamageMax;
 
-        Weapons(String weaponName, WeaponType weaponType, int baseDamageMin, int baseDamageMax) {
+        Weapons(String weaponName, WeaponType weaponType,
+                int baseDamageMin, int baseDamageMax) {
             this.weaponName = weaponName;
             this.weaponType = weaponType;
             this.baseDamageMin = baseDamageMin;
             this.baseDamageMax = baseDamageMax;
         }
 
-        public enum WeaponType {
+        private enum WeaponType {
             ARMS,
             NATURAL,
             EXOTIC

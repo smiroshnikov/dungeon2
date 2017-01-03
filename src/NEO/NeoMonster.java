@@ -3,16 +3,18 @@ package NEO;
 public class NeoMonster {
 
 
-    private int hp;
     // final private MonsterType.BaseRace race;
     final private MonsterType monsterType;
-    public NeoWeapon monsterWeapon;
+    final private NeoWeapon monsterEquippedWeapon;
 
-    public NeoMonster(MonsterType monsterType, NeoWeapon monsterWeapon, int minHp, int maxHp) {
+    private int hp;
+
+    public NeoMonster(MonsterType monsterType, int minHp, int maxHp, NeoWeapon monsterEquippedWeapon) {
+        this.monsterEquippedWeapon = monsterEquippedWeapon;
         this.hp = NeoRandom.rollDice(minHp, maxHp);
 //        this.race = race;
         this.monsterType = monsterType;
-        this.monsterWeapon = monsterWeapon;
+
     }
 
 
@@ -20,7 +22,7 @@ public class NeoMonster {
     public String toString() {
         return monsterType.monsterDescription +
                 " has " + hp + " hp" + "\n" + "this monster base race is \n " +
-                monsterType.baseRace;
+                monsterType.baseRace + "is equipped with " + monsterEquippedWeapon;
     }
 
     public enum MonsterType {
@@ -28,11 +30,13 @@ public class NeoMonster {
         // TODO  what OTHER parameters I expect to see down below ? Loot ? Allowed weapon types ?
         // DCL("Dracolich Slayer", BaseRace.Minotaur, Weapon.AllowedWeaponType.Axes) ?
 
-        GW("Goblin Warrior", BaseRace.GOBLINOID, 1, 3),
+        GOBWAR("Goblin Warrior", BaseRace.GOBLINOID, 1, 3),
         GS("Goblin Shaman", BaseRace.GOBLINOID, 1, 5),
         OCHF("Orc War-chief", BaseRace.ORC, 10, 20),
         ORCS("Orc Shaman", BaseRace.ORC, 1, 5),
-        KSC("Kobold Sorcerer", BaseRace.KOBOLD, 1, 5);
+        KSC("Kobold Sorcerer", BaseRace.KOBOLD, 1, 5),
+        RAT("Rabid Rat", BaseRace.ANIMAL, 1, 5),
+        WERERAT("Were rat", BaseRace.ANIMAL, 1, 5),;
 
         // TODO this whole structure is not used !!!
 
@@ -57,7 +61,8 @@ public class NeoMonster {
             DRAGON,
             INSECT,
             ABERRATION,
-            SHAPESHIFTER
+            SHAPESHIFTER,
+            ANIMAL
         }
     }
 }

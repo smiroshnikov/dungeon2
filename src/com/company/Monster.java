@@ -6,10 +6,6 @@ public class Monster {
     private String monsterName;
 
 
-//    public Monster(MonsterRace race) {
-//        this(race, null);
-//    }
-
     public Monster(MonsterRace race, Weapon monsterEquippedWeapon) {
         this(race, monsterEquippedWeapon, Randomizer.getRandomString());
     }
@@ -27,17 +23,17 @@ public class Monster {
     }
 
     public static Monster getRandomMonsterByRace(MonsterRace monsterRace) {
+        // I added this
         Weapon randomWeapon = Weapon.getRandomWeapon(monsterRace.baseWeaponType);
         return new Monster(monsterRace, randomWeapon);
-
     }
 
 
     @Override
     public String toString() {
         return "[" + race.getRaceName().toUpperCase() + "]" +
-                " is armed with " + "-" + monsterEquippedWeapon.toString().toUpperCase() + "-"
-                ;
+                " is armed with " + "-" + monsterEquippedWeapon.toString().toUpperCase() +
+                "-";
     }
 
     public String getMonsterName() {
@@ -68,7 +64,7 @@ public class Monster {
 
         WERESHARK("Wereshark ", Weapon.BaseWeapon.Type.NATURAL),
 
-        ASSASIN("Shadow assasin", Weapon.BaseWeapon.Type.EXOTIC),
+        ASSASSIN("Shadow assassin", Weapon.BaseWeapon.Type.EXOTIC),
         SHADOW_MAGE("Shadow mage", Weapon.BaseWeapon.Type.CASTER);
 
         private String raceName;
