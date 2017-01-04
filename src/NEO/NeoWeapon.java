@@ -28,7 +28,9 @@ public class NeoWeapon {
         FLAMBERGE("FLAMBERGE", WeaponType.EXOTIC, 4, 16),
 
         FETIDCLAWS("Fetid Claws", WeaponType.NATURAL, 1, 2),
-        SHARPTEETH("Sharp Teeth", WeaponType.NATURAL, 1, 2);
+        SHARPTEETH("Sharp Teeth", WeaponType.NATURAL, 1, 2),
+
+        ICE_BREATH("Ice Breath", WeaponType.CASTER, 6, 12);
 
         // enum fields
 
@@ -48,10 +50,12 @@ public class NeoWeapon {
             this.baseDamageMax = baseDamageMax;
         }
 
-        private enum WeaponType {
+        public enum WeaponType {
+            //        private enum WeaponType {
             MARTIAL,
             NATURAL,
-            EXOTIC
+            EXOTIC,
+            CASTER
         }
 
     }

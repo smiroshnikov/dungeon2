@@ -12,7 +12,6 @@ public class NeoMonster {
     public NeoMonster(MonsterType monsterType, int minHp, int maxHp, NeoWeapon monsterEquippedWeapon) {
         this.monsterEquippedWeapon = monsterEquippedWeapon;
         this.hp = NeoRandom.rollDice(minHp, maxHp);
-//        this.race = race;
         this.monsterType = monsterType;
 
     }
@@ -30,28 +29,29 @@ public class NeoMonster {
         // TODO  what OTHER parameters I expect to see down below ? Loot ? Allowed weapon types ?
         // DCL("Dracolich Slayer", BaseRace.Minotaur, Weapon.AllowedWeaponType.Axes) ?
 
-        GOBWAR("Goblin Warrior", BaseRace.GOBLINOID, 1, 3),
-        GS("Goblin Shaman", BaseRace.GOBLINOID, 1, 5),
-        OCHF("Orc War-chief", BaseRace.ORC, 10, 20),
-        ORCS("Orc Shaman", BaseRace.ORC, 1, 5),
-        KSC("Kobold Sorcerer", BaseRace.KOBOLD, 1, 5),
-        RAT("Rabid Rat", BaseRace.ANIMAL, 1, 5),
-        WERERAT("Were rat", BaseRace.ANIMAL, 1, 5),;
+        GOBWAR("Goblin Warrior", BaseRace.GOBLINOID, NeoWeapon.Weapons.WeaponType.EXOTIC),
+        GS("Goblin Shaman", BaseRace.GOBLINOID, NeoWeapon.Weapons.WeaponType.MARTIAL),
+        OCHF("Orc War-chief", BaseRace.ORC, NeoWeapon.Weapons.WeaponType.MARTIAL),
+        ORCS("Orc Shaman", BaseRace.ORC, NeoWeapon.Weapons.WeaponType.CASTER),
+        KSC("Kobold Sorcerer", BaseRace.KOBOLD, NeoWeapon.Weapons.WeaponType.CASTER),
+        RAT("Rabid Rat", BaseRace.ANIMAL, NeoWeapon.Weapons.WeaponType.NATURAL),
+        WERERAT("Were rat", BaseRace.ANIMAL, NeoWeapon.Weapons.WeaponType.NATURAL),;
 
         // TODO this whole structure is not used !!!
 
         private final String monsterDescription;
         private final BaseRace baseRace;
-        private final int baseDamageMin;
-        private final int baseDamageMax;
+        private final NeoWeapon.Weapons.WeaponType allowedWeapon;
 
         // TODO this whole structure is not used !!!
 
-        MonsterType(String monsterDescription, BaseRace baseRace, int baseDamageMin, int baseDamageMax) {
+        MonsterType(String monsterDescription, BaseRace baseRace,
+                    NeoWeapon.Weapons.WeaponType allowedWeapon) {
             this.monsterDescription = monsterDescription;
             this.baseRace = baseRace;
-            this.baseDamageMin = baseDamageMin;
-            this.baseDamageMax = baseDamageMax;
+
+            // here will be random ... probably
+            this.allowedWeapon = allowedWeapon;
         }
 
         public enum BaseRace {
