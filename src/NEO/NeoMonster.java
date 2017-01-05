@@ -7,12 +7,24 @@ public class NeoMonster {
     final private NeoWeapon monsterEquippedWeapon;
     private int hp;
 
+    public NeoMonster(MonsterType monsterType, int minHp, int maxHp
+                      // ,NeoWeapon monsterEquippedWeapon
+    ) {
+        //this.monsterEquippedWeapon = monsterEquippedWeapon;
+        this.monsterEquippedWeapon = NeoWeapon.equipRandomWeapon(NeoWeapon.WeaponsCollectionByType.WeaponGroups.EXOTIC);
+        this.hp = NeoRandom.rollDice(minHp, maxHp);
+        this.monsterType = monsterType;
+    }
+
     public NeoMonster(MonsterType monsterType, int minHp, int maxHp, NeoWeapon monsterEquippedWeapon) {
+        // second constructor in case I want to create monster without random weapon
         this.monsterEquippedWeapon = monsterEquippedWeapon;
         this.hp = NeoRandom.rollDice(minHp, maxHp);
         this.monsterType = monsterType;
     }
-//      TODO getRandom Monster with Weapons later on
+
+
+    //      TODO getRandom Monster with Weapons later on
 //    public static NeoMonster getRandomMonsterWithWeapon() {
 //        MonsterType monsterType = MonsterType.values()[Randomizer.getRandomNumber(0,MonsterType.values().length)];
 //        NeoWeapon randomWeapon = NeoWeapon.getRandomWeapon(monsterType.baseRace);
