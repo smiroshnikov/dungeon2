@@ -2,12 +2,13 @@ package NEO;
 
 public class NeoWeapon {
 
-    private Weapons equippedWeapon;
+    private WeaponsCollectionByType equippedWeapon;
 
 
-    public NeoWeapon(Weapons equippedWeapon) {
+    public NeoWeapon(WeaponsCollectionByType equippedWeapon) {
         this.equippedWeapon = equippedWeapon;
     }
+
 
     public int getRollWeaponDamage() {
         return NeoRandom.rollDice(equippedWeapon.baseDamageMin, equippedWeapon.baseDamageMax);
@@ -15,43 +16,43 @@ public class NeoWeapon {
 
     @Override
     public String toString() {
-        return equippedWeapon.weaponType + " weapon " + equippedWeapon.weaponName;
+        return equippedWeapon.weaponGroups + " weapon " + equippedWeapon.weaponName;
 
     }
 
-    public enum Weapons {
-        TWOHANDEDAXE("Lightning Axe", WeaponType.MARTIAL, 1, 12),
-        BASTARD_SWORD("Bastard Sword", WeaponType.MARTIAL, 2, 10),
-        FIRE_SPEAR("Fire Spear", WeaponType.MARTIAL, 2, 8),
+    public enum WeaponsCollectionByType {
+        TWOHANDEDAXE("Lightning Axe", WeaponGroups.MARTIAL, 1, 12),
+        BASTARD_SWORD("Bastard Sword", WeaponGroups.MARTIAL, 2, 10),
+        FIRE_SPEAR("Fire Spear", WeaponGroups.MARTIAL, 2, 8),
 
-        BARBED_WHIP("Barbed Whip ", WeaponType.EXOTIC, 1, 4),
-        FLAMBERGE("FLAMBERGE", WeaponType.EXOTIC, 4, 16),
+        BARBED_WHIP("Barbed Whip ", WeaponGroups.EXOTIC, 1, 4),
+        FLAMBERGE("FLAMBERGE", WeaponGroups.EXOTIC, 4, 16),
 
-        FETIDCLAWS("Fetid Claws", WeaponType.NATURAL, 1, 2),
-        SHARPTEETH("Sharp Teeth", WeaponType.NATURAL, 1, 2),
+        FETIDCLAWS("Fetid Claws", WeaponGroups.NATURAL, 1, 2),
+        SHARPTEETH("Sharp Teeth", WeaponGroups.NATURAL, 1, 2),
 
-        ICE_BREATH("Ice Breath", WeaponType.CASTER, 6, 12);
+        ICE_BREATH("Ice Breath", WeaponGroups.CASTER, 6, 12);
 
         // enum fields
 
         private final String weaponName;
-        private final WeaponType weaponType;
+        private final WeaponGroups weaponGroups;
         private final int baseDamageMin;
         private final int baseDamageMax;
 
         // enum fields
 
-        Weapons(String weaponName, WeaponType weaponType,
-                int baseDamageMin, int baseDamageMax) {
+        WeaponsCollectionByType(String weaponName, WeaponGroups weaponGroups,
+                                int baseDamageMin, int baseDamageMax) {
             // enum constructor
             this.weaponName = weaponName;
-            this.weaponType = weaponType;
+            this.weaponGroups = weaponGroups;
             this.baseDamageMin = baseDamageMin;
             this.baseDamageMax = baseDamageMax;
         }
 
-        public enum WeaponType {
-            //        private enum WeaponType {
+        public enum WeaponGroups {
+            //        private enum WeaponGroups {
             MARTIAL,
             NATURAL,
             EXOTIC,
