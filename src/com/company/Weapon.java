@@ -50,7 +50,6 @@ public class Weapon {
         TEETH("Teeth", Type.NATURAL, 2, 8),
         TENTACLES("Tentacles", Type.NATURAL, 8, 16),
 
-
         FIREBREATH("Fire Breath", Type.SUPERNATURAL, 8, 16),
         SPIKES("SPIKES", Type.SUPERNATURAL, 1, 3),
         ACID_SPIT("Acid Spit", Type.SUPERNATURAL, 4, 16),
