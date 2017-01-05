@@ -54,9 +54,9 @@ public class NeoMonster {
 
         // TODO this whole structure is not used !!!
 
+        public final NeoWeapon.WeaponsCollectionByType.WeaponGroups allowedWeapon;
         private final String monsterDescription;
         private final BaseRace baseRace;
-        private final NeoWeapon.WeaponsCollectionByType.WeaponGroups allowedWeapon;
 
         // TODO this whole structure is not used !!!
 

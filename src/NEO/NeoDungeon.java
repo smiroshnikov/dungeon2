@@ -8,5 +8,6 @@ public class NeoDungeon {
 //        NeoMonster test = new NeoMonster(NeoMonster.MonsterType.GOBWAR, 2, 6, new NeoWeapon(NeoWeapon.WeaponsCollectionByType.BARBED_WHIP));
         System.out.printf("%s%n", azog.toString());
 
+
     }
 }
