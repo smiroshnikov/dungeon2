@@ -5,7 +5,6 @@ public class Test {
         WeaponTest t = new WeaponTest();
 
         System.out.println(t.pickRandomByType(WeaponTest.WeaponList.WeaponType.NATURAL));
-        System.out.println(t.pickRandomWeapon());
-
+        System.out.println(t.pickRandomWeapon().toString());
     }
 }

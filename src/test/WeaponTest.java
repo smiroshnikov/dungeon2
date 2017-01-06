@@ -25,6 +25,7 @@ public final class WeaponTest {
         return (weapons.get(randomSeed));
     }
 
+
     public enum WeaponList {
         AXE("1 Handed Axe", WeaponType.MARTIAL, 1, 2),
         WHIP("Whip", WeaponType.EXOTIC, 1, 3),
@@ -54,6 +55,11 @@ public final class WeaponTest {
             this.maxDamage = maxDamage;
             this.weaponName = weaponName;
             this.weaponType = weaponType;
+        }
+
+        @Override
+        public String toString() {
+            return weaponName;
         }
 
         public enum WeaponType {
