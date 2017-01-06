@@ -1,10 +1,11 @@
 package test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-public class WeaponTest {
+public final class WeaponTest {
     List<WeaponList> weaponList = Arrays.asList(WeaponList.values());
 
     public void printWeaponList() {
@@ -18,8 +19,19 @@ public class WeaponTest {
         Random r = new Random();
         return weaponList.get(r.nextInt(weaponList.size()));
     }
+    public WeaponList pickRandomByType (WeaponList.WeaponType weaponType){
+        ArrayList<WeaponList> weapons = new ArrayList<>();
+        for (WeaponList weapon :WeaponList.values()){
+            if(weapon.weaponType==  weaponType){
+                weapons.add(weapon);
+            }
+        }
+        Random r= new Random();
+        int randomSeed = r.nextInt(weapons.size());
+        return (weapons.get(randomSeed));
+    }
 
-    private enum WeaponList {
+    public enum WeaponList {
         AXE("1 Handed Axe", WeaponType.MARTIAL, 1, 2),
         WHIP("Whip", WeaponType.EXOTIC, 1, 3),
         CLAWS("CLaws", WeaponType.NATURAL, 1, 12),
@@ -50,7 +62,7 @@ public class WeaponTest {
             this.weaponType = weaponType;
         }
 
-        private enum WeaponType {
+        public enum WeaponType {
             MARTIAL,
             NATURAL,
             EXOTIC
