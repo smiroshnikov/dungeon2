@@ -8,25 +8,19 @@ import java.util.Random;
 public final class WeaponTest {
     List<WeaponList> weaponList = Arrays.asList(WeaponList.values());
 
-    public void printWeaponList() {
-        for (int i = 0; i < weaponList.size(); i++) {
-            System.out.printf("%s%n", String.valueOf((weaponList.get(i))));
-
-        }
-    }
-
     public WeaponList pickRandomWeapon() {
         Random r = new Random();
         return weaponList.get(r.nextInt(weaponList.size()));
     }
-    public WeaponList pickRandomByType (WeaponList.WeaponType weaponType){
+
+    public WeaponList pickRandomByType(WeaponList.WeaponType weaponType) {
         ArrayList<WeaponList> weapons = new ArrayList<>();
-        for (WeaponList weapon :WeaponList.values()){
-            if(weapon.weaponType==  weaponType){
+        for (WeaponList weapon : WeaponList.values()) {
+            if (weapon.weaponType == weaponType) {
                 weapons.add(weapon);
             }
         }
-        Random r= new Random();
+        Random r = new Random();
         int randomSeed = r.nextInt(weapons.size());
         return (weapons.get(randomSeed));
     }
@@ -48,7 +42,7 @@ public final class WeaponTest {
         FETIDCLAWS("Fetid Claws", WeaponType.NATURAL, 1, 2),
         SHARPTEETH("Sharp Teeth", WeaponType.NATURAL, 1, 2),
 
-        ICE_BREATH("Ice Breath", WeaponType.EXOTIC, 6, 12);
+        ICEBREATH("Ice Breath", WeaponType.EXOTIC, 6, 12);
 
         int minDamage;
         int maxDamage;
